@@ -395,7 +395,23 @@ body {
     top: 30px;
     right: 100px;
   }
+  .mobile-menu {
+    width: 65%;
+  }
 }
+@media (max-width: 370px) {
+  .landing {
+    width: 140%;
+  }
+  .header {
+    width: 91%;
+  }
+  .mobile-menu  {
+    width: 70%;
+  }
+}
+
+
 
 .button-close {
   background-color: #007bff;
