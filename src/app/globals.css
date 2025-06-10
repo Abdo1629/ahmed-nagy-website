@@ -359,15 +359,15 @@ body {
 
 @media (max-width: 400px) {
   .landing {
-    height: 850px;
-    width: 90.5%;
+    margin-top: 0;
+    height: 950px;
+    width: 105%;
     flex-direction: column-reverse;
-    height: auto;
     justify-content: center;
     align-items: center;
   }
   .header {
-    width: 80%;
+    width: 88%;
   }
   .landing-buttons {
     flex-direction: column;
@@ -390,12 +390,11 @@ body {
     left: -15px;
   }
   .cloud-shape.front {
-    width: 100px;
+    width: 200px;
     height: 150px;
     top: 30px;
     right: 100px;
   }
-  
 }
 
 .button-close {
