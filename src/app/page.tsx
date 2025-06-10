@@ -1,5 +1,5 @@
-import Header from './components/header.jsx';
-import Landing from './components/landing.jsx';
+import Header from './components/Header';
+import Landing from './components/Landing';
 
 export default function Home() {
   return (
