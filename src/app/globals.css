@@ -586,3 +586,76 @@ body {
   z-index: 1050;
 }
 
+
+.clients-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(to right, #0f172a, #1e293b); 
+  padding: 30px 0;
+}
+
+.clients-scroll {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.clients-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.clients-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.clients-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+}
+
+.logo-link {
+  flex: 0 0 auto;
+  margin: 0 30px;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease;
+  filter: brightness(1.2);
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+.clients-buttons {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.clients-buttons button {
+  pointer-events: auto;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .clients-buttons button {
+    display: block;
+  }
+}

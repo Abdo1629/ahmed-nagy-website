@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ahmed Nagy Eldakhmisi  - HR Consultant & Expert",
-  description: "Ahmed Nagy Eldakhmisi is a seasoned HR consultant with over 16 years of experience in human resource development and building professional HR systems. Founder of HRins Egypt, offering innovative and practical HR solutions.",
+  title: "Ahmed Nagy Eldakhmesy  - HR Consultant & Expert",
+  description: "Ahmed Nagy Eldakhmesy is a seasoned HR consultant with over 16 years of experience in human resource development and building professional HR systems. Founder of HRins Egypt, offering innovative and practical HR solutions.",
   keywords: [
     "HR consultant",
     "human resources expert",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "personal branding",
     "organizational development",
     "HR systems",
-    "Ahmed Nagy Eldakhmisi",
+    "Ahmed Nagy Eldakhmesy",
     "professional HR",
     "HR strategy",
     "HR courses",
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     "أحمد ناجي الدخميسي",
     "أحمد ناجي",
   ],
-  authors: [{ name: "Ahmed Nagy Eldakhmisi" }],
-  creator: "Ahmed Nagy Eldakhmisi",
+  authors: [{ name: "Ahmed Nagy Eldakhmesy" }],
+  creator: "Ahmed Nagy Eldakhmesy",
   openGraph: {
-    title: "Ahmed Nagy Eldakhmisi - HR Consultant & Expert",
-    description: "Ahmed Nagy Eldakhmisi is a seasoned HR consultant with over 16 years of experience in human resource development and building professional HR systems. Founder of HRins Egypt, offering innovative and practical HR solutions.",
-    url: "https://www.ahmednagyeldakhmisi.com",
-    siteName: "Ahmed Nagy Eldakhmisi",
+    title: "Ahmed Nagy Eldakhmesy - HR Consultant & Expert",
+    description: "Ahmed Nagy Eldakhmesy is a seasoned HR consultant with over 16 years of experience in human resource development and building professional HR systems. Founder of HRins Egypt, offering innovative and practical HR solutions.",
+    url: "https://www.ahmednagyeldakhmesy.com",
+    siteName: "Ahmed Nagy Eldakhmesy",
     locale: "en_US",
     type: "website",
   }

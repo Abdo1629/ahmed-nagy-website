@@ -54,7 +54,7 @@ export default function Landing() {
                 <div className="cloud-shape back"></div>
                 <div className="cloud-shape front"></div>
                 <motion.img
-                src="/images/landing-image.png"
+                src="https://res.cloudinary.com/dbgdvnkev/image/upload/v1749740203/landing-image_stryph.webp"
                 alt="Landing Image"
                 className="landing-image"
                 initial={{ scale: 0.9, opacity: 0 }}

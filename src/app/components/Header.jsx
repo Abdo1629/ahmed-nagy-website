@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navItems = ["Home", "About", "Services", "Blog", "Contact Me"];
+const navItems = ["Home", "About", "Services", "Blog", "Testimonials", "Contact Me"];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,14 +18,16 @@ export default function Header() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {/* Logo */}
-        <motion.img
-          src="/images/Ahmed-nagy-Blue.png"
+        <a href="">
+          <motion.img
+          src="https://res.cloudinary.com/dbgdvnkev/image/upload/v1749739476/Ahmed-Nagy-Blue_aylrtr.webp"
           alt="Logo"
           className="logo"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
         />
+        </a>
 
         {/* Nav links (Desktop) */}
         <nav className="nav-links">
@@ -80,13 +82,17 @@ export default function Header() {
       exit={{ x: "100%" }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >   
-      <button
-        className="button-close"
-        onClick={() => setIsOpen(false)}
+      <motion.button
+      initial={{ x: "100%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "100%" }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="button-close"
+      onClick={() => setIsOpen(false)}
       >   
                 <span className="bar1"></span>
                 <span className="bar2"></span>
-      </button>
+      </motion.button>
 
       {navItems.map((item, index) => (
         <motion.a
