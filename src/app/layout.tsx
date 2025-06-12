@@ -17,7 +17,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ahmed Nagy Eldakhmisi  - HR Consultant & Expert",
   description: "Ahmed Nagy Eldakhmisi is a seasoned HR consultant with over 16 years of experience in human resource development and building professional HR systems. Founder of HRins Egypt, offering innovative and practical HR solutions.",
-  viewport: "width=device-width, initial-scale=1.0",
   keywords: [
     "HR consultant",
     "human resources expert",
@@ -53,6 +52,12 @@ export const metadata: Metadata = {
     type: "website",
   }
   };
+
+  
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1
+}
 
 export default function RootLayout({
   children,

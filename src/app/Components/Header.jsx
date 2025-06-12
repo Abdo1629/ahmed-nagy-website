@@ -1,8 +1,5 @@
 "use client";
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close" />
-
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -67,13 +64,22 @@ export default function Header() {
       {/* Side menu (Mobile) */}
       <AnimatePresence>
   {isOpen && (
+    <>
+      <motion.div
+      className="backdrop"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 0.4 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+      onClick={() => setIsOpen(false)}
+      />
     <motion.div
       className="mobile-menu"
       initial={{ x: "100%" }}
       animate={{ x: 0 }}
       exit={{ x: "100%" }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
-    >
+    >   
       <button
         className="button-close"
         onClick={() => setIsOpen(false)}
@@ -94,8 +100,9 @@ export default function Header() {
         >
           {item}
         </motion.a>
-      ))}
+      ))}   
     </motion.div>
+    </>
   )}
 </AnimatePresence>
 
