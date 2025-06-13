@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import Link from 'next/link';
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -52,15 +52,9 @@ export default function AboutSection() {
           Ahmed’s vision is to transform HR from an administrative function to...
           </motion.p>
 
-          <motion.a
-            href="/about"
-            className="read-more"
-            initial={{ opacity: 0, y: 20 }}
-            animate={textInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.9, duration: 0.6 }}
-          >
+          <Link href="/about" className="read-more">
             Read more →
-          </motion.a>
+          </Link>
         </div>
     </section>
   );

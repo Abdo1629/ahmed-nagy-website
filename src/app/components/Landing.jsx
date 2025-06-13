@@ -7,6 +7,7 @@ export default function Landing() {
     <>
     <motion.div
         className="landing" 
+        id="landing"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeInOut" }}
