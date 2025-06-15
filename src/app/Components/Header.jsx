@@ -225,17 +225,30 @@ export default function Header() {
   </motion.div>
 ))}
               </motion.div>
-
+              <motion.button
+              className="portfolio-button"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.5 }}>
+                  Download Portfolio
+              </motion.button>
+              <motion.button
+              className="portfolio-button"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.5 }}>
+                  Book A Consultation
+              </motion.button>
               <motion.div
                 className="social-icons"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
               >
-                <a href="#" className="social-link"><FaFacebookF /></a>
-                <a href="#" className="social-link"><FaLinkedinIn /></a>
-                <a href="#" className="social-link"><FaWhatsapp /></a>
-                <a href="#" className="social-link"><FaInstagram /></a>
+                <a href="https://www.facebook.com/AhmedNagyEldokhmesy/" className="social-link"><FaFacebookF /></a>
+                <a href="https://www.linkedin.com/in/ahmednagyeldokmesy/" className="social-link"><FaLinkedinIn /></a>
+                <a href="https://wa.me/201141778555" className="social-link"><FaWhatsapp /></a>
+                <a href="https://www.instagram.com/ahmedeldokhmesyoffical" className="social-link"><FaInstagram /></a>
               </motion.div>
             </motion.div>
           </>

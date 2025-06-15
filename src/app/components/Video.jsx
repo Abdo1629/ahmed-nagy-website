@@ -47,6 +47,7 @@ export default function Video() {
             </motion.button>
         </div>
     </div>
+    <div className="margin-top"></div>
     </>
     )
 }
