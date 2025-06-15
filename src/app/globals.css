@@ -232,7 +232,7 @@ body {
 }
 
 .landing-button {
-  background-color: rgb(28,84,179);
+  background-color: #0070f3;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -1156,6 +1156,10 @@ body {
             }
         }
 @media (max-width: 425px) {
+  .logo-item{
+    width: 80px;
+    padding-right: 0;
+  }
             .video-container {
                 height: 460px; /* Further adjust height for very small screens */
             }
@@ -1209,3 +1213,109 @@ body {
                 padding: 0.6rem 1.2rem;
             }
         }
+
+
+.courses-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  text-align: center;
+}
+
+.heading-icon {
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #337FFF;
+}
+
+.courses-heading h2 {
+  text-align: center;
+  justify-content: center;
+}
+
+.review {
+  cursor: pointer;
+  transition: scale 0.4s ease;
+}
+.review:hover {
+  scale: 1.04;
+}
+.booking-hrins {
+  width: 40%;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.booking-hrins:hover {
+  scale: 0.99;
+}
+
+@media (max-width: 425px) {
+.hrinsWhiteHero {
+  width: 90px;
+}
+
+.hrinsTextHero {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.aboutHRins {
+  padding: 25px 10px;
+}
+.clients-review{
+  padding: 40px 10px;
+}
+.review {
+    padding:15px;
+}
+.booking-hrins {
+  width: 95%;
+} 
+.book-heading {
+  font-size: 1.5rem;
+}
+.training-heading {
+    font-size: 1.5rem;
+}
+}
+
+.consultation-label{
+  font-weight: 600;
+  font-size: 1rem;
+  color: #337FFF;
+}
+
+.footer-line {
+  height: 80px;
+  width: 0.5px;
+  background: white;
+  padding: 0.5px;
+  margin: 0 17px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 425px) {
+  footer {
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-logos {
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-nagy-logo {
+    width: 70px;
+    height: 40px;
+  }
+  .footer-HRins-logo {
+    width: 35px;
+  }
+
+}
+
+.booking-footer {
+  margin-top: 0;
+}

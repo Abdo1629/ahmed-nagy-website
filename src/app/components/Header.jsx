@@ -76,7 +76,7 @@ export default function Header() {
                     >
                       {item.subItems.map((sub) => (
                         <Link
-                          href={`/${sub.path}`}
+                          href={`./${sub.path}`}
                           key={sub.label}
                           className={`dropdown-item ${pathname === sub.path ? "active" : ""}`}
                         >

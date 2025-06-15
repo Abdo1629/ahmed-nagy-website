@@ -4,6 +4,7 @@ import Logos from './components/LogosScrolling';
 import AboutSection from './components/About';
 import ScrollToTop from './components/ScrollToTop';
 import Video from './components/Video';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Logos />
       <Video />
       <ScrollToTop/>
+      <Footer/>
     </>
   );
 }

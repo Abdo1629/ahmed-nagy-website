@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Video() {
     return (
@@ -12,8 +13,9 @@ export default function Video() {
             autoPlay
             loop
             muted
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 , y: 50}}
+            animate={{ opacity: 1 , y: 0}}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
         />
         <div className="video-overlay">
@@ -38,9 +40,10 @@ export default function Video() {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.5, ease: "easeOut" }}
-                onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
             >
+                <Link href="/hrinsegypt">
                 Get Started
+                </Link>
             </motion.button>
         </div>
     </div>

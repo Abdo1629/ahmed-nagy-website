@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import ScrollToTop from '../components/ScrollToTop';
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Footer from '../components/Footer';
 
 export default function AboutPage() {
   const { ref: imageRef, inView: imageInView } = useInView({ triggerOnce: true });
@@ -112,6 +113,7 @@ export default function AboutPage() {
         </div>
     </section>
     <ScrollToTop />
+    <Footer />
     
   </>
   );

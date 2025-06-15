@@ -27,13 +27,14 @@ export default function ScrollingLogos() {
       className="scroll-container"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <div className="scrolling-logos" ref={scrollRef}>
         {[...logos, ...logos].map((logo, index) => (
           <div className="logo-item" key={index}>
             <a href={logo.link} target="_blank" rel="noopener noreferrer">
-                <Image src={logo} alt={`logo-${index}`} width={logo.width} height={logo.height} />
+                <Image src={logo} alt={`logo-${index}`} width={logo.width} height={logo.height}/>
             </a>
           </div>
         ))}

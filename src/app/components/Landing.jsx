@@ -61,6 +61,7 @@ export default function Landing() {
                 className="landing-image"
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
                 />
             </div>
