@@ -1,17 +1,22 @@
 
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto_Slab, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
+const geistSans = Roboto_Slab({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: "400"
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+  style: "normal",
+  preload: true,
+  fallback: ["system-ui", "sans-serif"],
 });
 
 export const metadata: Metadata = {

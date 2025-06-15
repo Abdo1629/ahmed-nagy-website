@@ -12,6 +12,7 @@ export default function AboutPage() {
   return (
   <>
     <Header/>
+    <div className="margin-top"></div>
     <section className="about-page">
         <div className="about-left" ref={imageRef}>
           <motion.img
@@ -22,6 +23,17 @@ export default function AboutPage() {
             animate={imageInView ? { scale: 1, opacity: 1 } : {}}
             transition={{ delay: 0.3, duration: 0.6 }}
           />
+          <motion.div
+            className="about-text"
+            initial={{ y: 50, opacity: 0 }}
+            animate={imageInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+          >
+            <h2 className="about-text-title">Ahmed Nagy Eldokhmecy</h2>
+        <p className="about-text-subtitle">
+          Human Resources Consultant | Founder of HRins Egypt | HR Director at Odin Investments
+        </p>
+        </motion.div>
         </div>
 
         <div className="about-right" ref={textRef}>
@@ -58,7 +70,11 @@ export default function AboutPage() {
           hands-on expertise, offering practical, proven solutions instead of
           theoretical advice.
           </motion.p>
-          <motion.p>
+          <motion.p 
+          initial={{ y: 50, opacity: 0 }}
+          animate={textInView ? { y: 0, opacity: 1 } : {}}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="about-subtitle">
           His work is built on values of credibility, transparency, innovation,
           and building trusted, respectful relationships with clients and trainees.
           He believes that human connection is key to sustainable professional
@@ -96,6 +112,7 @@ export default function AboutPage() {
         </div>
     </section>
     <ScrollToTop />
+    
   </>
   );
 }

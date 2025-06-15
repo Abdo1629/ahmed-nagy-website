@@ -1,19 +1,30 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebookF, FaLinkedinIn, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 
-const navItems = ["Home", "About", "Services", "HRins Egypt", "Blog", "Testimonials", "Contact Me"];
+const navItems = [
+  { label: "Home", path: "/" },
+  {
+    label: "About",
+    subItems: [
+      { label: "About Me", path: "/about" },
+      { label: "HRins Egypt", path: "/hrinsegypt" },
+    ],
+  },
+  { label: "Services", path: "/services" },
+  { label: "Blog", path: "/blog" },
+  { label: "Testimonials", path: "/testimonials" },
+  { label: "Contact Me", path: "/contact" },
+];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const pathname = usePathname();
-
-  const normalizePath = (item) =>
-    item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, "")}`;
 
   return (
     <>
@@ -37,13 +48,50 @@ export default function Header() {
 
         {/* Nav links (Desktop) */}
         <nav className="nav-links">
-          {navItems.map((item, index) => {
-            const path = normalizePath(item);
-            return (
+          {navItems.map((item, index) =>
+            item.subItems ? (
+              <div className="nav-dropdown relative" key={item.label}>
+                <motion.button
+                  className="nav-item dropdown-trigger flex items-center gap-1 cursor-pointer focus:outline-none"
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                >
+                  {item.label}
+                  <motion.span
+                    className="triangle"
+                    animate={{ rotate: dropdownOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    ▼
+                  </motion.span>
+                </motion.button>
+
+                <AnimatePresence>
+                  {dropdownOpen && (
+                    <motion.div
+                      className="dropdown-menu absolute top-full left-0 bg-white p-2 rounded-md shadow-md z-50"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {item.subItems.map((sub) => (
+                        <Link
+                          href={`/${sub.path}`}
+                          key={sub.label}
+                          className={`dropdown-item ${pathname === sub.path ? "active" : ""}`}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : (
               <Link
-                key={item}
-                href={path}
-                className={`nav-item ${pathname === path ? "active" : ""}`}
+                key={item.label}
+                href={item.path}
+                className={`nav-item ${pathname === item.path ? "active" : ""}`}
               >
                 <motion.div
                   initial={{ x: -30, opacity: 0 }}
@@ -54,11 +102,11 @@ export default function Header() {
                     ease: "easeOut",
                   }}
                 >
-                  {item}
+                  {item.label}
                 </motion.div>
               </Link>
-            );
-          })}
+            )
+          )}
         </nav>
 
         {/* Hamburger menu (Mobile) */}
@@ -75,7 +123,7 @@ export default function Header() {
         </motion.div>
       </motion.header>
 
-      {/* Side menu (Mobile) */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <>
@@ -105,42 +153,89 @@ export default function Header() {
                 <span className="bar1"></span>
                 <span className="bar2"></span>
               </motion.button>
+
               <motion.div
                 className="mobile-links"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
               >
-                {navItems.map((item, index) => {
-                  const path = normalizePath(item);
-                  return (
-                    <Link
-                      key={item}
-                      href={path}
-                      className={`nav-item ${pathname === path ? "active" : ""}`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 + index * 0.1 }}
-                      >
-                        {item}
-                      </motion.div>
-                    </Link>
-                  );
-                })}
+{navItems.map((item, index) => (
+  <motion.div 
+  key={item.label} 
+  className="w-full"
+  initial={{ opacity: 0, y: -30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.5 + index * 0.1, duration: 0.3 }}>
+    {item.subItems ? (
+      <>
+        <button
+          onClick={() =>
+            setDropdownOpen(dropdownOpen === item.label ? null : item.label)
+          }
+          className={`nav-item w-full text-left h-8 flex items-center justify-between ${
+            dropdownOpen === item.label ? "active" : ""
+          }`}
+        >
+          {item.label}
+          <motion.span
+            animate={{ rotate: dropdownOpen === item.label ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            ▼
+          </motion.span>
+        </button>
+
+        <AnimatePresence>
+          {dropdownOpen === item.label && (
+            <motion.div
+              className="pl-4 py-1 bg-gray-100 rounded-md overflow-hidden mt-2"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {item.subItems.map((sub) => (
+                <Link
+                  key={sub.label}
+                  href={sub.path}
+                  className={`block py-2 px-2 nav-item dropdown-item ${
+                    pathname === sub.path ? "active" : ""
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {sub.label}
+                </Link>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </>
+    ) : (
+      <Link
+        href={item.path}
+        className={`nav-item h-8 flex items-center px-2 ${
+          pathname === item.path ? "active" : ""
+        }`}
+        onClick={() => setIsOpen(false)}
+      >
+        {item.label}
+      </Link>
+    )}
+  </motion.div>
+))}
               </motion.div>
+
               <motion.div
                 className="social-icons"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
               >
-                <a href="" className="facebook-icon"><FaFacebookF /></a>
-                <a href="" className="social-link"><FaLinkedinIn /></a>
-                <a href="" className="social-link"><FaWhatsapp /></a>
-                <a href="" className="social-link"><FaInstagram /></a>
+                <a href="#" className="social-link"><FaFacebookF /></a>
+                <a href="#" className="social-link"><FaLinkedinIn /></a>
+                <a href="#" className="social-link"><FaWhatsapp /></a>
+                <a href="#" className="social-link"><FaInstagram /></a>
               </motion.div>
             </motion.div>
           </>

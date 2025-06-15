@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Landing() {
     return (
     <>
+    <div className="margin-top"></div>
     <motion.div
         className="landing" 
         id="landing"
