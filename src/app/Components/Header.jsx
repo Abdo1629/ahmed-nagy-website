@@ -15,10 +15,9 @@ const navItems = [
       { label: "HRins Egypt", path: "/hrinsegypt" },
     ],
   },
-  { label: "Services", path: "/services" },
-  { label: "Blog", path: "/blog" },
-  { label: "Testimonials", path: "/testimonials" },
-  { label: "Contact Me", path: "/contact" },
+  { label: "Services", path: "/#services" },
+  { label: "Testimonials", path: "/hrinsegypt#testimonials" },
+  { label: "Contact Me", path: "/#contact" },
 ];
 
 export default function Header() {

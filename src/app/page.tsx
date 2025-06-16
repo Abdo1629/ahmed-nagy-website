@@ -5,6 +5,8 @@ import AboutSection from './components/About';
 import ScrollToTop from './components/ScrollToTop';
 import Video from './components/Video';
 import Footer from './components/Footer';
+import Features from './components/Services';
+import ContactForm from './components/Contact';
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <AboutSection/>
       <Logos />
       <Video />
+      <Features />
+      <ContactForm />
       <ScrollToTop/>
       <Footer/>
     </>

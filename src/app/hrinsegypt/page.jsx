@@ -60,7 +60,7 @@ export default function HRinsEgyptPage() {
 </section>
 
 
-<section className="py-20 px-6 md:px-20 bg-[#f0f8ff] clients-review">
+<section id="testimonials" className="py-20 px-6 md:px-20 bg-[#f0f8ff] clients-review">
   <h2 className="text-3xl font-semibold text-center mb-12">What Our Clients Say</h2>
   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
     {[

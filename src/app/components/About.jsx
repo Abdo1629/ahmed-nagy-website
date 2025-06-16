@@ -9,53 +9,74 @@ export default function AboutSection() {
   const { ref: textRef, inView: textInView } = useInView({ triggerOnce: true });
 
   return (
-    <section className="about-preview">
+    <section className="bg-[#F5F7FA] py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl  flex flex-col lg:flex-row items-center gap-16">
+        
+        {/* Left: Image */}
         <div className="about-left" ref={imageRef}>
           <motion.img
             src="https://res.cloudinary.com/dbgdvnkev/image/upload/v1749753449/about-image_cxf5yj.webp"
-            alt="About Me Image"
+            alt="About Ahmed Nagy"
             className="about-image"
-            initial={{ scale: 0.9, opacity: 0 }}
+            initial={{ scale: 0.95, opacity: 0 }}
             animate={imageInView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
           />
         </div>
 
-        <div className="about-right" ref={textRef}>
+        {/* Right: Text */}
+        <div className="w-full lg:w-1/2 px-6 lg:px-8" ref={textRef}>
           <motion.h2
-            className="about-title"
-            initial={{ y: 50, opacity: 0 }}
+            className="text-sm font-semibold text-[#0056D2] tracking-wide uppercase"
+            initial={{ y: 30, opacity: 0 }}
             animate={textInView ? { y: 0, opacity: 1 } : {}}
-            transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+            transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
           >
-            About Me
+            About the Founder
           </motion.h2>
 
           <motion.h1
-            initial={{ y: 50, opacity: 0 }}
+            className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl"
+            initial={{ y: 30, opacity: 0 }}
             animate={textInView ? { y: 0, opacity: 1 } : {}}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="about-subtitle"
+            transition={{ delay: 0.4, duration: 0.6 }}
           >
-          Ahmed Nagy Eldokhmecy is a Human Resources Consultant with over 16
-          years of experience in people development and building strategic HR
-          systems. He is the founder of HRins Egypt, offering innovative HR
-          solutions tailored for the Arab business landscape. He currently serves
-          as the HR Director at Odin Investments, one of the leading firms in
-          the Egyptian stock exchange.
+            Ahmed Nagy Eldokhmecy
           </motion.h1>
-          <motion.p 
-          initial={{ y: 50, opacity: 0 }}
-          animate={textInView ? { y: 0, opacity: 1 } : {}}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="about-subtitle">
-          Ahmed’s vision is to transform HR from an administrative function to...
+
+          <motion.p
+            className="mt-6 text-lg text-gray-700"
+            initial={{ y: 30, opacity: 0 }}
+            animate={textInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
+            Ahmed is a Human Resources Consultant with over 16 years of experience in people development and strategic HR systems. He’s the founder of HRins Egypt and currently the HR Director at Odin Investments, a top-tier firm listed on the Egyptian stock exchange.
           </motion.p>
 
-          <Link href="/about" className="read-more">
-            Read more →
-          </Link>
+          <motion.p
+            className="mt-4 text-base text-gray-600"
+            initial={{ y: 30, opacity: 0 }}
+            animate={textInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ delay: 0.6, duration: 0.6 }}
+          >
+            His vision is to transform HR from a traditional administrative task to a strategic pillar of organizational growth across the Arab world.
+          </motion.p>
+
+          <motion.div
+            className="mt-6"
+            initial={{ y: 30, opacity: 0 }}
+            animate={textInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ delay: 0.7, duration: 0.6 }}
+          >
+            <Link
+              href="/about"
+              className="inline-block text-[#0056D2] font-medium hover:underline transition"
+            >
+              Read more →
+            </Link>
+          </motion.div>
         </div>
+      </div>
     </section>
   );
 }

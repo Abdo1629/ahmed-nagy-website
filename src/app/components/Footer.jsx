@@ -52,13 +52,13 @@ export default function Footer() {
         >
           <h4 className="font-semibold text-lg mb-2">Follow Us</h4>
           <div className="flex gap-4">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition">
+            <a href="https://www.facebook.com/AhmedNagyEldokhmesy/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition">
               <FaFacebookF size={20} />
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300 transition">
+            <a href="https://www.instagram.com/ahmedeldokhmesyoffical" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300 transition">
               <FaInstagram size={20} />
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+            <a href="https://www.linkedin.com/in/ahmednagyeldokmesy/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
               <FaLinkedinIn size={20} />
             </a>
           </div>
