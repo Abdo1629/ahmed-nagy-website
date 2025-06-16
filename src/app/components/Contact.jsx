@@ -36,8 +36,8 @@ export default function ContactForm() {
     <section className="bg-[#F5F7FA] py-8 sm:py-12" ref={ref}>
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-sm font-semibold text-[#0056D2] uppercase tracking-wide text-center">
@@ -54,8 +54,8 @@ export default function ContactForm() {
         <motion.form
           onSubmit={handleSubmit}
           className="mt-4 bg-white p-8 rounded-lg shadow-md grid grid-cols-1 gap-6"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <div>
