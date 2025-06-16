@@ -203,7 +203,7 @@ body {
   height: fit-content;
   padding: 0 20px;
   width: 100%;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1.5px solid grey;
 }
 
 .left-section {
@@ -757,8 +757,8 @@ body {
 }
 .about-image {
   background-color: rgba(28,84,179,0.6);
+  padding: 0 150px;
   width: 100%;
-  padding: 0 140px;
   max-width: 800px;
 }
 
@@ -789,12 +789,6 @@ body {
   text-decoration: underline;
 }
 
-@media (min-width: 1000px) {
-  .about-image {
-    padding: 0 180px;
-  }
-}
-
 @media (max-width: 768px) {
   .about-preview {
     flex-direction: column;
@@ -806,7 +800,7 @@ body {
   }
 
   .about-image {
-    padding: 0 220px;
+    padding: 0 250px;
   }
 
   .about-preview h2 {
@@ -826,6 +820,12 @@ body {
   .read-more {
     margin-top: 0;
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 630px) {
+  .about-image {
+    padding: 0 180px;
   }
 }
 

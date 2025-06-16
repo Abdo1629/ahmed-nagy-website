@@ -33,36 +33,37 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="bg-[#F5F7FA] py-24 sm:py-32" ref={ref}>
+    <section className="bg-[#F5F7FA] py-8 sm:py-12" ref={ref}>
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={inView ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
         >
           <h2 className="text-sm font-semibold text-[#0056D2] uppercase tracking-wide text-center">
             Get in Touch
           </h2>
-          <p className="mt-2 text-4xl font-bold text-center text-gray-900">
+          <p className="mt-1 text-3xl font-bold text-center text-gray-900">
             Contact Us
           </p>
-          <p className="mt-4 text-lg text-center text-gray-700">
+          <p className="mt-2 mb-10 text-center text-gray-700">
             Have a question, project idea, or just want to connect? We'd love to hear from you.
           </p>
         </motion.div>
 
         <motion.form
           onSubmit={handleSubmit}
-          className="mt-12 bg-white p-8 rounded-lg shadow-md grid grid-cols-1 gap-6"
-          initial={{ y: 50, opacity: 0 }}
-          animate={inView ? { y: 0, opacity: 1 } : {}}
-          transition={{ delay: 0.2, duration: 0.6 }}
+          className="mt-4 bg-white p-8 rounded-lg shadow-md grid grid-cols-1 gap-6"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
         >
           <div>
             <label className="block text-sm font-medium text-gray-700">Name</label>
             <input
               type="text"
               name="name"
+              placeholder="Your Name"
               required
               value={formData.name}
               onChange={handleChange}
@@ -76,6 +77,7 @@ export default function ContactForm() {
               type="email"
               name="email"
               required
+              placeholder="example@gmail.com"
               value={formData.email}
               onChange={handleChange}
               className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-3 shadow-sm focus:border-[#0056D2] focus:ring-[#0056D2]"
@@ -87,6 +89,7 @@ export default function ContactForm() {
             <textarea
               name="message"
               required
+              placeholder="Your Message"
               rows="5"
               value={formData.message}
               onChange={handleChange}

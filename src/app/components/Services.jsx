@@ -48,7 +48,7 @@ const features = [
 
 export default function Features() {
   return (
-    <div id='services' className=" bg-[#F5F7FA] py-24 sm:py-32">
+    <div id='services' className=" bg-[#F5F7FA] py-8 sm:py-15">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-sm font-semibold text-[#0056D2] tracking-wide uppercase">What We Offer</h2>

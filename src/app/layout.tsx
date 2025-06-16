@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ahmed Nagy Eldakhmesy - HR Consultant & Expert",
     description: "Ahmed Nagy Eldakhmesy is a seasoned HR consultant with over 16 years of experience in human resource development and building professional HR systems. Founder of HRins Egypt, offering innovative and practical HR solutions.",
-    url: "https://www.ahmednagyeldakhmesy.com",
+    url: "https://www.eldokhmesy.com",
     siteName: "Ahmed Nagy Eldakhmesy",
     locale: "en_US",
     type: "website",

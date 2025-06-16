@@ -9,8 +9,8 @@ export default function AboutSection() {
   const { ref: textRef, inView: textInView } = useInView({ triggerOnce: true });
 
   return (
-    <section className="bg-[#F5F7FA] py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl  flex flex-col lg:flex-row items-center gap-16">
+    <section className="bg-[#F5F7FA] ">
+      <div className="mx-auto   flex flex-col lg:flex-row items-center gap-5">
         
         {/* Left: Image */}
         <div className="about-left" ref={imageRef}>
@@ -25,7 +25,7 @@ export default function AboutSection() {
         </div>
 
         {/* Right: Text */}
-        <div className="w-full lg:w-1/2 px-6 lg:px-8" ref={textRef}>
+        <div className="w-full lg:w-1/2 px-6 lg:px-8 py-1 sm:py-5" ref={textRef}>
           <motion.h2
             className="text-sm font-semibold text-[#0056D2] tracking-wide uppercase"
             initial={{ y: 30, opacity: 0 }}
@@ -70,7 +70,7 @@ export default function AboutSection() {
           >
             <Link
               href="/about"
-              className="inline-block text-[#0056D2] font-medium hover:underline transition"
+              className="inline-block text-[#0056D2] font-medium hover:underline transition mb-8"
             >
               Read more →
             </Link>
