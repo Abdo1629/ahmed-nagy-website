@@ -69,6 +69,11 @@ export default function BookingForm() {
           </div>
 
           <div>
+            <label className="block font-medium mb-2">Phone Number</label>
+            <input name="phone" type="text" required placeholder="Your Contact Number" className="w-full p-3 rounded-md border focus:ring-2 focus:ring-blue-500"/>
+          </div>
+
+          <div>
             <label className="block font-medium mb-2">Booking Type</label>
             <select value={bookingType} onChange={(e) => { setBookingType(e.target.value); setPrice(""); }} className="w-full p-3 rounded-md border focus:ring-2 focus:ring-blue-500">
               <option value="Consultation">Consultation</option>
