@@ -10,7 +10,7 @@ export default function AboutSection() {
 
   return (
     <section className="bg-[#F5F7FA] ">
-      <div className="mx-auto   flex flex-col lg:flex-row items-center gap-5">
+      <div className="mx-auto   flex flex-col min-[769px]:flex-row items-center gap-5">
         
         {/* Left: Image */}
         <div className="about-left" ref={imageRef}>

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
@@ -36,10 +37,10 @@ export default function Footer() {
         >
           <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li><a href="#courses" className="hover:text-white transition">Training Courses</a></li>
-            <li><a href="#services" className="hover:text-white transition">Career Services</a></li>
-            <li><a href="#business" className="hover:text-white transition">Business Solutions</a></li>
-            <li><a href="#contact" className="hover:text-white transition">Contact Me</a></li>
+            <li><Link href="/hrinsegypt#testimonials" className="hover:text-white transition">Testimonials</Link></li>
+            <li><Link href="/#services" className="hover:text-white transition">Career Services</Link></li>
+            <li><Link href="/hrinsegypt" className="hover:text-white transition">HRins Egypt</Link></li>
+            <li><Link href="/#contact" className="hover:text-white transition">Contact Me</Link></li>
           </ul>
         </motion.div>
 

@@ -33,7 +33,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="bg-[#F5F7FA] py-8 sm:py-12" ref={ref}>
+    <section id="contact" className="bg-[#F5F7FA] py-8 sm:py-12" ref={ref}>
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

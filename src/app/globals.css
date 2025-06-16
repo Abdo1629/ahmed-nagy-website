@@ -147,7 +147,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 65%;
+  width: 50%;
   height: 100vh;
   background-color: white;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
@@ -443,6 +443,7 @@ body {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+    border: none;
   }
 
   .left-section, .right-section {
@@ -453,6 +454,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1.5px solid grey;
   }
 
   .left-section {
@@ -747,6 +749,7 @@ body {
 }
 
 .about-left {
+  background-color: rgba(28,84,179,0.6);
   border-top: 1px solid #eaeaea;
   width: 40%;
 }
@@ -1121,7 +1124,7 @@ body {
         }
         .video-overlay {
             position: absolute;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.6);
             top: 0;
             left: 0;
             width: 100%;

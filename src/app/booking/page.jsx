@@ -22,6 +22,7 @@ export default function BookingForm() {
     "Soft Skills Bootcamp",
     "CV Writing",
     "Career Coaching",
+    "Other - Custmize Your Course"
   ];
 
   const handleSubmit = async (e) => {
@@ -88,12 +89,36 @@ export default function BookingForm() {
             </div>
           ) : (
             <div>
-              <label className="block font-medium mb-2">Select Course</label>
-              <select name="course" required className="w-full p-3 rounded-md border focus:ring-2 focus:ring-blue-500">
-                {COURSES.map(c => <option key={c}>{c}</option>)}
-              </select>
+              {bookingType === "Course" && (
+  <div>
+    <label className="block font-medium mb-2">Select Course</label>
+    <select
+      name="course"
+      required
+      value={price}
+      onChange={(e) => setPrice(e.target.value)}
+      className="w-full p-3 rounded-md border focus:ring-2 focus:ring-blue-500"
+    >
+      {COURSES.map(c => <option key={c}>{c}</option>)}
+    </select>
+  </div>
+)}
+
+{bookingType === "Course" && price === "Other - Custmize Your Course" && (
+  <div>
+    <label className="block font-medium mb-2 mt-5">Tell us what you need</label>
+    <textarea
+      name="customCourseDetails"
+      rows={4}
+      required
+      placeholder="Describe the training or course you need..."
+      className="w-full p-3 rounded-md border focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+)}
             </div>
           )}
+          
 
           <div>
             <label className="block font-medium mb-2">Additional Notes</label>
@@ -121,7 +146,7 @@ export default function BookingForm() {
       </section>
 
       <ScrollToTop />
-      <Footer className="booking-footer"/>
+      <Footer/>
     </>
   );
 }
