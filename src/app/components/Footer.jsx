@@ -2,8 +2,12 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import AdminLoginModal from "./AdminLogin";
+import { useState } from "react";
 
 export default function Footer() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <footer className="bg-[#002A7C] text-white py-12 px-6 md:px-20">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 items-start">
@@ -37,6 +41,7 @@ export default function Footer() {
         >
           <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm text-gray-300">
+            <li onClick={() => setModalOpen(true)} className="hover:text-white transition">Are you an admin?</li>
             <li><Link href="/hrinsegypt#testimonials" className="hover:text-white transition">Testimonials</Link></li>
             <li><Link href="/#services" className="hover:text-white transition">Career Services</Link></li>
             <li><Link href="/hrinsegypt" className="hover:text-white transition">HRins Egypt</Link></li>
@@ -74,6 +79,8 @@ export default function Footer() {
       >
         © {new Date().getFullYear()} Ahmed Nagy Eldokhmecy. All rights reserved.
       </motion.div>
+
+      <AdminLoginModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </footer>
   );
 }

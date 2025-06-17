@@ -29,7 +29,6 @@ export default function BookingForm() {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    // include bookingType and selection
     formData.append('bookingType', bookingType);
     formData.append('selectedOption', price || formData.get('course'));
 
