@@ -235,7 +235,7 @@ export default function Header() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}>
-                  Download Portfolio
+                  <a href="/images/portfollio.pdf" download>Download Portfolio</a>
               </motion.button>
               <motion.button
               className="portfolio-button"

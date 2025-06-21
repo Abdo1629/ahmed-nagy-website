@@ -65,8 +65,8 @@ export default function Landing() {
                 alt="Landing Image"
                 className="landing-image"
                 priority
-                width="100"
-                height="100"
+                width="400"
+                height="400"
                 />
             </motion.div>
         </motion.div>

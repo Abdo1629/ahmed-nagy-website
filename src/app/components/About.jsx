@@ -23,8 +23,8 @@ export default function AboutSection() {
             src="https://res.cloudinary.com/dbgdvnkev/image/upload/v1749753449/about-image_cxf5yj.webp"
             alt="About Ahmed Nagy"
             className="about-image"
-            width="50"
-            height="50"
+            width="200"
+            height="200"
           />
         </motion.div>
 
