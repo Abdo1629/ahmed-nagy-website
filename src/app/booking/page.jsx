@@ -7,6 +7,8 @@ import ScrollToTop from '../components/ScrollToTop';
 import Footer from '../components/Footer';
 
 export default function BookingForm() {
+
+  
   const [bookingType, setBookingType] = useState("Consultation");
   const [price, setPrice] = useState("");
   const [status, setStatus] = useState(null);

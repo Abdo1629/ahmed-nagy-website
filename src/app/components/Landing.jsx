@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Landing() {
     return (
@@ -52,19 +53,22 @@ export default function Landing() {
         </div>
         </motion.div>
         <motion.div className="right-section">
-            <div className="animated-container">
+            <motion.div className="animated-container"
+            initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}>
                 <div className="cloud-shape back"></div>
                 <div className="cloud-shape front"></div>
-                <motion.img
+                <Image
                 src="https://res.cloudinary.com/dbgdvnkev/image/upload/v1749740203/landing-image_stryph.webp"
                 alt="Landing Image"
                 className="landing-image"
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+                priority
+                width="100"
+                height="100"
                 />
-            </div>
+            </motion.div>
         </motion.div>
         </motion.div>    
     </>

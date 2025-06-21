@@ -3,6 +3,7 @@
 html {
   font-family: "Roboto Slab", sans-serif;
   font-style: normal;
+  font-display: swap;
 }
 
 body {
@@ -19,7 +20,7 @@ body {
 .header {
   justify-content: space-between;
   display: flex;
-  padding: 25px;
+  padding: 10px 20px;
   align-items: center;
   width: 100%;
   height: 70px;
@@ -35,7 +36,6 @@ body {
 .header img {
   padding-top: 10px;
   width: 90px;
-  height: auto;
 }
 
 /* Desktop nav */
@@ -852,7 +852,7 @@ body {
   height: 70%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
   padding: 50px 20px 0 20px ;
 }
 
@@ -1337,5 +1337,5 @@ body {
   .footer-HRins-logo {
     width: 35px;
   }
-  
+
 }

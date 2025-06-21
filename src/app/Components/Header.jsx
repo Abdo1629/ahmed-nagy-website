@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebookF, FaLinkedinIn, FaWhatsapp, FaInstagram } from "react-icons/fa";
@@ -34,16 +35,21 @@ export default function Header() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {/* Logo */}
-        <Link href="/">
-          <motion.img
+        <motion.div 
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        >
+          <Link href="/">
+          <Image
+          className="logo"
             src="https://res.cloudinary.com/dbgdvnkev/image/upload/v1749739476/Ahmed-Nagy-Blue_aylrtr.webp"
             alt="Logo"
-            className="logo"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
+            width="90"
+            height="50"
           />
         </Link>
+        </motion.div>
 
         {/* Nav links (Desktop) */}
         <nav className="nav-links">
@@ -67,7 +73,7 @@ export default function Header() {
                 <AnimatePresence>
                   {dropdownOpen && (
                     <motion.div
-                      className="dropdown-menu absolute top-full left-0 bg-white p-2 rounded-md shadow-md z-50"
+                      className="dropdown-menu absolute top-full left-0 bg-white p-3 rounded-md shadow-md z-50"
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -188,7 +194,7 @@ export default function Header() {
         <AnimatePresence>
           {dropdownOpen === item.label && (
             <motion.div
-              className="pl-4 py-1 bg-gray-100 rounded-md overflow-hidden mt-2"
+              className="pl-4 py-3 bg-gray-100 rounded-md overflow-hidden mt-2"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import AdminLoginModal from "./AdminLogin";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Footer() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -24,9 +25,9 @@ export default function Footer() {
           transition={{ duration: 0.5 }}
           className="flex flex-row footer-logos"
             >
-            <img className="footer-nagy-logo" src="/images/AhmedNagyWhite.png" alt="Ahmed Nagy Logo" width={100} height={50} />
+            <Image className="footer-nagy-logo" src="/images/AhmedNagyWhite.png" alt="Ahmed Nagy Logo" width={100} height={50} />
             <div className="footer-line"></div>
-            <img className="footer-HRins-logo" src="/images/HRinsEgyptWhite.png" alt="HRins Logo" width={50} height={50} />
+            <Image className="footer-HRins-logo" src="/images/HRinsEgyptWhite.png" alt="HRins Logo" width={50} height={50} />
             </motion.div>
           <p className="text-sm text-gray-200">
             Empowering individuals and businesses through modern, practical HR solutions in Egypt and beyond.
@@ -58,13 +59,13 @@ export default function Footer() {
         >
           <h4 className="font-semibold text-lg mb-2">Follow Us</h4>
           <div className="flex gap-4">
-            <a href="https://www.facebook.com/AhmedNagyEldokhmesy/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition">
+            <a href="https://www.facebook.com/AhmedNagyEldokhmesy/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition" aria-label="Ahmed Nagy Facebook Link">
               <FaFacebookF size={20} />
             </a>
-            <a href="https://www.instagram.com/ahmedeldokhmesyoffical" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300 transition">
+            <a href="https://www.instagram.com/ahmedeldokhmesyoffical" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300 transition" aria-label="Ahmed Nagy Instagram Link">
               <FaInstagram size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/ahmednagyeldokmesy/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+            <a href="https://www.linkedin.com/in/ahmednagyeldokmesy/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition" aria-label="Ahmed Nagy Linkedin Link">
               <FaLinkedinIn size={20} />
             </a>
           </div>

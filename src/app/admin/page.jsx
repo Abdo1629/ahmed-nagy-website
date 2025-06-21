@@ -19,7 +19,18 @@ import Footer from '../components/Footer';
 ChartJS.register(CategoryScale, LinearScale, BarElement);
 
 export default function DashboardPage() {
-  const router = useRouter();
+    const router = useRouter();
+    const [isAuthorized, setIsAuthorized] = useState(null);
+
+  useEffect(() => {
+    const isAdmin = localStorage.getItem("isAdmin");
+    if (isAdmin !== "true") {
+      router.push("/");
+    }else{
+      setIsAuthorized(true);
+    }
+  }, [router]);
+
   const [dataRows, setDataRows] = useState([]);
   const [stats, setStats] = useState({
     weeklyUsers: 0,
@@ -86,9 +97,12 @@ export default function DashboardPage() {
       ratios: { courseRatio, consultRatio },
     });
   }
-
+if (isAuthorized === null) {
+  return null;
+}else {
   return (
     <>
+    
     <Header />
     <div className="margin-top"></div>
     <div className="p-12 space-y-8">
@@ -214,4 +228,5 @@ export default function DashboardPage() {
           <Footer/>
     </>
   );
+}
 }

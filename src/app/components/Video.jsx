@@ -13,6 +13,9 @@ export default function Video() {
             autoPlay
             loop
             muted
+            preload="none"
+            loading="lazy"
+            kind="nocaptions"
             initial={{ opacity: 0 , y: 50}}
             animate={{ opacity: 1 , y: 0}}
             whileInView={{ opacity: 1, y: 0 }}

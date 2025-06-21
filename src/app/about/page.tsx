@@ -119,6 +119,7 @@ export default function AboutPage() {
         <iframe
           src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/MBCMasr/videos/1094396469161703/"
           allowFullScreen
+          loading="lazy"
           className="rounded-lg w-full h-full"
         ></iframe>
       </div>
@@ -141,6 +142,7 @@ export default function AboutPage() {
       <p className="font-semibold mb-2">“Can Gen Z Handle Pressure?”</p>
       <div className="aspect-w-12 aspect-h-10">
         <iframe
+        loading="lazy"
           src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/MBCMASR2/videos/561979840196964/"
           allowFullScreen
           className="rounded-lg w-full h-full"
@@ -165,6 +167,7 @@ export default function AboutPage() {
       <p className="font-semibold mb-2">“The One Question You Must Answer”</p>
       <div className="aspect-w-12 aspect-h-10">
         <iframe
+        loading="lazy"
           src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/MBCMASR2/videos/431350496724758/"
           allowFullScreen
           className="rounded-lg w-full h-full"
@@ -189,6 +192,7 @@ export default function AboutPage() {
       <p className="font-semibold mb-2">“How to Build a Strong Resume”</p>
       <div className="aspect-w-12 aspect-h-10">
         <iframe
+        loading="lazy"
           src="https://www.youtube.com/embed/delb9D4XY9U"
           allowFullScreen
           className="rounded-lg w-full h-full"

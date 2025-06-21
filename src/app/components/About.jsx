@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 
 export default function AboutSection() {
   const { ref: imageRef, inView: imageInView } = useInView({ triggerOnce: true });
@@ -13,16 +14,19 @@ export default function AboutSection() {
       <div className="mx-auto   flex flex-col min-[769px]:flex-row items-center gap-5">
         
         {/* Left: Image */}
-        <div className="about-left" ref={imageRef}>
-          <motion.img
+        <motion.div className="about-left" ref={imageRef}
+        initial={{ scale: 0.95, opacity: 0 }}
+            animate={imageInView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
+        >
+          <Image
             src="https://res.cloudinary.com/dbgdvnkev/image/upload/v1749753449/about-image_cxf5yj.webp"
             alt="About Ahmed Nagy"
             className="about-image"
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={imageInView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
+            width="50"
+            height="50"
           />
-        </div>
+        </motion.div>
 
         {/* Right: Text */}
         <div className="w-full lg:w-1/2 px-6 lg:px-8 py-1 sm:py-5" ref={textRef}>
