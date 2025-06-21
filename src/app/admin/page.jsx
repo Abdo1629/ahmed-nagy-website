@@ -18,6 +18,20 @@ import Footer from '../components/Footer';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement);
 
+const generatePDF = async () => {
+  const html2pdf = (await import("html2pdf.js")).default;
+  const element = document.getElementById("submissions-table");
+  const opt = {
+    margin: 0.3,
+    filename: `AhmedNagy-Submissions-${new Date().toISOString().split("T")[0]}.pdf`,
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'in', format: 'a3', orientation: 'landscape' }
+  };
+  html2pdf().set(opt).from(element).save();
+};
+
+
 export default function DashboardPage() {
     const router = useRouter();
     const [isAuthorized, setIsAuthorized] = useState(null);
@@ -191,13 +205,14 @@ if (isAuthorized === null) {
 
       <div className="bg-white rounded-lg shadow-md p-6 mt-12">
   <h3 className="text-lg font-semibold text-gray-800 mb-4">All Submissions</h3>
-  <div className="overflow-auto">
+  <div id="submissions-table" className="overflow-auto">
     <table className="min-w-full table-auto border-collapse text-sm text-left text-gray-700">
       <thead className="bg-gray-100 text-gray-600 uppercase text-xs">
         <tr>
           <th className="px-4 py-3">Date</th>
           <th className="px-4 py-3">Name</th>
           <th className="px-4 py-3">Email</th>
+          <th className="px-4 py-3">Phone Number</th>
           <th className="px-4 py-3">Type</th>
           <th className="px-4 py-3">Option</th>
           <th className="px-4 py-3">Notes</th>
@@ -210,6 +225,7 @@ if (isAuthorized === null) {
             <td className="px-4 py-2 whitespace-nowrap">{r.date}</td>
             <td className="px-4 py-2">{r.name}</td>
             <td className="px-4 py-2">{r.email}</td>
+            <td className="px-4 py-2">{r.phone}</td>
             <td className="px-4 py-2">{r.type}</td>
             <td className="px-4 py-2">{r.option}</td>
             <td className="px-4 py-2">{r.notes}</td>
@@ -220,6 +236,15 @@ if (isAuthorized === null) {
         ))}
       </tbody>
     </table>
+    <div className="flex justify-end mb-4">
+  <button
+    onClick={() => generatePDF()}
+    className="bg-[#0056D2] hover:bg-[#003f9e] text-white font-semibold px-4 py-2 rounded shadow"
+  >
+    Save as PDF
+  </button>
+</div>
+
   </div>
 </div>
 

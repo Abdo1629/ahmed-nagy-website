@@ -20,6 +20,7 @@ export default function AdminLoginModal({ isOpen, onClose }) {
     ) {
       onClose();
       localStorage.setItem("isAdmin", "true");
+      router.push ("/admin");
     } else {
       setError("Incorrect email or password.");
     }
