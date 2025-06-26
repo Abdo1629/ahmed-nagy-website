@@ -69,7 +69,7 @@ export default function Features() {
                 <div className="absolute top-5 left-2 flex h-12 w-12 items-center justify-center rounded-lg bg-[#0056D2]">
                     <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                     </div>
-                    {feature.name}
+  <div className="pl-2 max-[426px]:pl-12">{feature.name}</div>
                 </dt>
                 <dd className="mt-2 text-base text-gray-600">{feature.description}</dd>
             </div>
