@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Header from "../components/Header";
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from '../components/ScrollToTop';
 import { IoBookOutline } from "react-icons/io5";
 import Footer from '../components/Footer';
 import Link from "next/link";

@@ -3,7 +3,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from '../components/ScrollToTop';
 import { LightBulbIcon, ArrowTrendingUpIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 
 export default function CareerCoachingPage() {
