@@ -1,8 +1,8 @@
-// components/HRinsEgyptPage.tsx
 "use client";
 
 import { motion } from "framer-motion";
 import Header from "../components/Header";
+import ScrollToTop from './components/ScrollToTop';
 import { IoBookOutline } from "react-icons/io5";
 import Footer from '../components/Footer';
 import Link from "next/link";
@@ -62,19 +62,23 @@ export default function HRinsEgyptPage() {
 
 <section id="testimonials" className="py-20 px-6 md:px-20 bg-[#f0f8ff] clients-review">
   <h2 className="text-3xl font-semibold text-center mb-12">What Our Clients Say</h2>
-  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
     {[
       {
-        name: "Nour A.",
-        text: "The CV service helped me land 3 interviews in one week! Professional and tailored to my needs.",
+        name: "Omnia.",
+        text: "بالنسبة لحد زيي مش عنده خبرة خااالص في المجال اول سيشن كان ممتع جدا اسلوب الدكتور سهل وسلس و كان مخليني مركزة ومش زهقانة بالعكس مش حسيت بالوقت ومنتظرة جداا السيشن الجاي",
       },
       {
-        name: "Omar T.",
-        text: "They helped us set up a full HR system for our startup. Super practical and efficient!",
+        name: "Samy.",
+        text: "السيشن كانت ممتعة جدا والوقت عدي بسرعة واحسن حاجتين كانوا اسلوب وطريقة دكتور احمد ف الشرح والتطبيق العملي كان ممتع جدا وانه بيعرف يقدم المعلومة بطريقة funny",
       },
       {
-        name: "Sarah M.",
-        text: "The career coaching was life-changing. I went into interviews confident and clear on my goals.",
+        name: "Mohamed.",
+        text: "دكتور احمد متميز جدا بتوصيل المعلومه بطريقه جميله وأهم حاجه اثبتت كفائة الكورس التطبيق العملي اول حاجه وخبرة الدكتور في المجال متنوعه مشاء الله والاسلوب في التعامل عليه عامل كبير اوي",
+      },
+      {
+        name: "HR Mona.",
+        text: "حقیقى احنا اللى ممتنين لحضرتك جدا على الأمانة والصدق في تقديم المعلومه وحرص حضرتك على انك توصلنا المعلومات بابسط طريقه وبجد انا مكنتش اعرف ان بكره اخر سيشن بجد ده من افضل الكورسات اللى حضرتها بشكر حضرتك جدا بشكر تيم العمل الرائع",
       },
     ].map((t, i) => (
       <motion.div
@@ -85,8 +89,8 @@ export default function HRinsEgyptPage() {
         transition={{ duration: 0.5, delay: i * 0.2 }}
         className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500 review"
       >
-        <p className="text-gray-700 italic mb-4">“{t.text}”</p>
-        <p className="font-semibold text-blue-600 text-right">— {t.name}</p>
+        <p className="text-gray-700 italic mb-4 arabic">“{t.text}”</p>
+        <p className="font-semibold text-blue-600 text-left">— {t.name}</p>
       </motion.div>
     ))}
   </div>
@@ -150,6 +154,7 @@ export default function HRinsEgyptPage() {
         </div>
       </section>
     </div>
+    <ScrollToTop />
     <Footer />
     </>
   );

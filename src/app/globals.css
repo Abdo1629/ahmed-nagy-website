@@ -1348,3 +1348,7 @@ body {
 .red {
   color: red;
 }
+
+.arabic {
+  direction: rtl;
+}

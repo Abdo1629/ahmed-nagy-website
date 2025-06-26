@@ -4,16 +4,36 @@ import Header from "../components/Header";
 import ScrollToTop from "../components/ScrollToTop";
 import CountUp from "react-countup";
 import { useRef, useState, useEffect } from "react";
-import { motion , useInView} from "framer-motion";
+import { motion , useInView , useAnimation} from "framer-motion";
 import Footer from "../components/Footer";
 import Image from "next/image";
 import { MdSlideshow } from "react-icons/md";
+import { AcademicCapIcon, ShieldCheckIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 
 export default function AboutPage() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const controls = useAnimation();
   const [startCount, setStartCount] = useState(false);
+
+  const credentials = [
+  {
+    title: "HR Diploma",
+    subtitle: "Regional IT Institute (RITI)",
+    icon: AcademicCapIcon,
+  },
+  {
+    title: "Crisis Management",
+    subtitle: "Nasser Military Academy",
+    icon: ShieldCheckIcon,
+  },
+  {
+    title: "Multiple Awards",
+    subtitle: "Alexandria & Zewail University , MUST",
+    icon: SparklesIcon,
+  },
+];
 
   useEffect(() => {
     if (isInView) {
@@ -77,21 +97,41 @@ export default function AboutPage() {
       </section>
 
       <section className="py-16 px-6 md:px-20 bg-white text-black">
-        <div className="max-w-5xl mx-auto text-center">
+                <div className="max-w-5xl mx-auto text-center">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold mb-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            className="text-3xl md:text-4xl font-bold mb-4 text-[#0073E6]"
+            initial={{ opacity: 0 , scale: 0.95}}
+            whileInView={{ opacity: 1 , scale: 1}}
             transition={{ duration: 0.5 }}
           >
-            My Mission
+            My Vision
           </motion.h2>
-          <p className="text-lg leading-8 text-gray-700">
-            Transforming HR into a strategic engine for business growth. I help organizations shift from chaos to
-            clarity by building systems that empower people and align performance with purpose.
-          </p>
+          <motion.p 
+          ref={ref}
+          initial={{ opacity: 0 , fontWeight: 300 ,  y: 20 }}
+          whileInView={{ opacity: 1 , fontWeight: 500 , y: 0 }}
+          transition={{ duration: 0.8 , ease:"easeOut"}}
+          animate={controls}
+          className="text-lg leading-8 text-gray-700">
+           I strive to transform Human Resources from a traditional administrative role into a strategic business partner. I believe in investing in human capital as the core driver of organizational success.
+What sets me apart is my unique ability to bridge academic depth with hands-on experience. I deliver not just theoretical advice, but actionable solutions tailored to the realities of the Arab business environment. I simplify complex HR concepts and make them accessible across all career levels.
+I work with honesty, transparency, and a true passion for human connection—building trusted, long-term relationships with clients and trainees that contribute directly to their growth.
+          </motion.p>
         </div>
       </section>
+
+      <section className="py-16 px-6 md:px-20 bg-white">
+      <h2 className="text-3xl font-bold text-center mb-12 text-[#0056D2]">Academic Excellence & Credentials</h2>
+      <div className="grid gap-8 sm:grid-cols-3">
+        {credentials.map((cred, i) => (
+          <div key={i} className="flex flex-col items-center text-center bg-[#f0f8ff] p-6 rounded-xl shadow-md hover:shadow-lg transition">
+            <cred.icon className="h-8 w-8 text-[#0056D2] mb-3" />
+            <h3 className="text-xl font-semibold">{cred.title}</h3>
+            <p className="text-gray-600 mt-1">{cred.subtitle}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
 <section className="py-20 bg-white px-6 md:px-20 text-black">
   <div className="courses-heading mb-12">

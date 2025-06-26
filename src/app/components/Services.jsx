@@ -6,43 +6,44 @@ import {
   ChatBubbleBottomCenterTextIcon,
   BuildingOfficeIcon,
 } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 const features = [
-  {
+{
     name: 'HR Training – 20-Hour Program',
-    description:
-      'A practical course covering the fundamentals of HR—from recruitment to performance evaluation. Ideal for 0–5 years of experience.',
+    description: 'A practical course covering the fundamentals of HR—from recruitment to performance evaluation. Ideal for 0–5 years of experience.',
     icon: AcademicCapIcon,
-  },
-  {
+    link: "/hr-course",
+    },
+    {
     name: 'Soft Skills Course',
-    description:
-      'Practical training on emotional intelligence, communication, leadership, and problem-solving tailored to workplace challenges.',
+    description: 'Practical training on emotional intelligence, communication, leadership, and problem-solving tailored to workplace challenges.',
     icon: ChatBubbleBottomCenterTextIcon,
-  },
-  {
+    link: "/soft-skills",
+    },
+    {
     name: 'HR Department Setup (For Startups)',
-    description:
-      'Helping growing businesses design and establish HR functions from scratch—optimized for the Saudi and Egyptian markets.',
+    description: 'Helping growing businesses design and establish HR functions from scratch—optimized for the Saudi and Egyptian markets.',
     icon: BuildingOfficeIcon,
+    link: "hr-setup",
   },
   {
     name: 'CV Writing (ATS-Friendly)',
-    description:
-      'Professional resume writing services aligned with Applicant Tracking Systems (ATS) to highlight your strengths and boost interview chances.',
+    description:'Professional resume writing services aligned with Applicant Tracking Systems (ATS) to highlight your strengths and boost interview chances.',
     icon: DocumentTextIcon,
+    link: " ",
   },
   {
     name: 'LinkedIn Profile Optimization',
-    description:
-      'We build and refine your LinkedIn profile to attract recruiters, reflect your true value, and elevate your online presence.',
+    description: 'We build and refine your LinkedIn profile to attract recruiters, reflect your true value, and elevate your online presence.',
     icon: BriefcaseIcon,
+    link: "/linkedin-profile-optmizition",
   },
   {
     name: '1:1 Career Coaching',
-    description:
-      'Personalized sessions to help you switch careers, grow in your current role, or ace interviews with confidence.',
+    description: 'Personalized sessions to help you switch careers, grow in your current role, or ace interviews with confidence.',
     icon: UserGroupIcon,
+    link: "/career-coaching",
   },
 ]
 
@@ -60,17 +61,19 @@ export default function Features() {
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+        <dl className="grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-12">
             {features.map((feature) => (
-              <div key={feature.name} className="relative pl-16">
+                <Link key={feature.name} href={feature.link}>
+                <div className="relative bg-gray-200 shadow-md pl-16 review py-5 px-5 rounded-md">
                 <dt className="text-lg font-semibold text-gray-900">
-                  <div className="absolute top-0 left-0 flex h-12 w-12 items-center justify-center rounded-lg bg-[#0056D2]">
+                <div className="absolute top-5 left-2 flex h-12 w-12 items-center justify-center rounded-lg bg-[#0056D2]">
                     <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
-                  </div>
-                  {feature.name}
+                    </div>
+                    {feature.name}
                 </dt>
                 <dd className="mt-2 text-base text-gray-600">{feature.description}</dd>
-              </div>
+            </div>
+                </Link>
             ))}
           </dl>
         </div>

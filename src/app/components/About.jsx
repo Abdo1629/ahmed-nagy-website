@@ -54,7 +54,7 @@ export default function AboutSection() {
             animate={textInView ? { y: 0, opacity: 1 } : {}}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            Ahmed is a Human Resources Consultant with over 16 years of experience in people development and strategic HR systems. He’s the founder of HRins Egypt and currently the HR Director at Odin Investments, a top-tier firm listed on the Egyptian stock exchange.
+            Ahmed is a Human Resources Consultant With over 16 years of experience in HR development and people empowerment, I am the founder of HRins Egypt, a company dedicated to delivering practical and innovative HR solutions to help individuals and organizations reach exceptional and sustainable performance. I currently serve as the HR Director at Odin Investments, one of the leading financial firms in the Egyptian stock exchange.
           </motion.p>
 
           <motion.p
