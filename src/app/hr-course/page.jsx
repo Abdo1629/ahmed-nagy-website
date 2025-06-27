@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion"; 
 import Header from '../components/Header';
 import ScrollToTop from '../components/ScrollToTop';
 import Footer from '../components/Footer';
@@ -40,12 +41,34 @@ export default function HRTrainingPage() {
       </ul>
 
       {/* Testimonials */}
-      <div className="bg-white p-6 rounded-xl shadow-md max-w-3xl">
-        <p className="italic text-gray-700 mb-4">
-          “This course gave me real-world knowledge and tools to use in my current HR job. Highly recommended!”
-        </p>
-        <p className="text-right font-semibold text-[#0056D2]">— Mariam K., HR Specialist</p>
-      </div>
+<div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
+    {[
+      {
+        name: "HR Jeseey",
+        text: "والله يادكتور احنا اللى سعداء بحضرتك وبجد كل حاجه في الكورس مميزة وبجد انا عاجزة عن الشكر لحضرتك لان يجد في كل مره بتدينى حافز وثقه فى نفسي حقيقي الكورس ده فرق معايا",
+      },
+      {
+        name: "Samy.",
+        text: "السيشن كانت ممتعة جدا والوقت عدي بسرعة واحسن حاجتين كانوا اسلوب وطريقة دكتور احمد ف الشرح والتطبيق العملي كان ممتع جدا وانه بيعرف يقدم المعلومة بطريقة funny",
+      },
+      {
+        name: "HR Mona.",
+        text: "حقیقى احنا اللى ممتنين لحضرتك جدا على الأمانة والصدق في تقديم المعلومه وحرص حضرتك على انك توصلنا المعلومات بابسط طريقه وبجد انا مكنتش اعرف ان بكره اخر سيشن بجد ده من افضل الكورسات اللى حضرتها بشكر حضرتك جدا بشكر تيم العمل الرائع",
+      },
+    ].map((t, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: i * 0.2 }}
+        className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500 review"
+      >
+        <p className="text-gray-700 italic mb-4 arabic">“{t.text}”</p>
+        <p className="font-semibold text-blue-600 text-left">— {t.name}</p>
+      </motion.div>
+    ))}
+  </div>
     </section>
     <ScrollToTop />
     <Footer/>

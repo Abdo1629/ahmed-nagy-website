@@ -65,12 +65,12 @@ export default function Features() {
             {features.map((feature) => (
                 <Link key={feature.name} href={feature.link}>
                 <div className="relative bg-gray-200 shadow-md pl-16 review py-5 px-5 rounded-md">
-                <dt className="text-lg font-semibold text-gray-900">
-                <div className="absolute top-5 left-2 flex h-12 w-12 items-center justify-center rounded-lg bg-[#0056D2]">
+                <div className="flex text-lg font-semibold text-gray-900">
+                <div className=" flex h-12 w-12 items-center justify-center rounded-lg bg-[#0056D2]">
                     <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                     </div>
-  <div className="pl-2 max-[426px]:pl-12">{feature.name}</div>
-                </dt>
+  <div className="pl-2 w-100 max-[530px]:w-80 max-[375px]:w-50 max-[450px]:w-60 max-[1022px]:w-90 min-[1022px]:w-75" >{feature.name}</div>
+                </div>
                 <dd className="mt-2 text-base text-gray-600">{feature.description}</dd>
             </div>
                 </Link>
